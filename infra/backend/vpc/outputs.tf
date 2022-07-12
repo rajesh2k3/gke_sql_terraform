@@ -1,4 +1,4 @@
-# network VPC output
+# Network VPC output
 
 output "vpc_name" {
   value       = "${google_compute_network.vpc.name}"
