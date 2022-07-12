@@ -1,7 +1,8 @@
 # GCP variables
 
 variable "region" {
-  default     = "asia-southeast1"
+  // default     = "asia-southeast1"
+  default     = "us-central1"
   description = "Region of resources"
 }
 
