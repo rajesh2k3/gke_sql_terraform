@@ -7,7 +7,7 @@ resource "google_container_cluster" "primary" {
     "${var.region}-c",
   ]
 
-  //  region              = "${var.region}"
+  //  region         = "${var.region}"
   min_master_version = "${var.min_master_version}"
   node_version       = "${var.node_version}"
   enable_legacy_abac = false
