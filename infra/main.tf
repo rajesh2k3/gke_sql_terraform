@@ -11,7 +11,7 @@ data "terraform_remote_state" "project_id" {
 }
 
 provider "google" {
-  version = "~> 1.16"
+  version = "~> 4.24.0"
   project = "${data.terraform_remote_state.project_id.project_id}"
   region  = "${var.region}"
 }
