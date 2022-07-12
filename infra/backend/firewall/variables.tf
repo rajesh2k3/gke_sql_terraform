@@ -1,4 +1,4 @@
-# variable needed for subnetwork creation
+# Variable needed for subnetwork creation
 
 variable "vpc_name" {
   description = "Netwrok name"
