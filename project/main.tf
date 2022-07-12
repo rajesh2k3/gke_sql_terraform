@@ -1,5 +1,5 @@
 provider "google" {
-  version = "~> 1.16"
+  version = "~> 4.24.0"
   region  = "${var.region}"
 }
 
