@@ -113,7 +113,7 @@ gcloud beta billing projects link ${TF_ADMIN} \
 --billing-account ${TF_VAR_billing_account}
 ```
 
-### Create the Terraform service account
+### Create the Terraform Service Account
 
 Create the service account in the Terraform admin project and download the JSON credentials:
 
