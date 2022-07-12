@@ -1,4 +1,4 @@
-# GCP variables
+# GCP Variables
 variable "region" {
   description = "Region of resources"
 }
