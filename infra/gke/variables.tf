@@ -1,4 +1,4 @@
-# GKE variables
+# GKE Variables
 
 variable "region" {
   description = "Region of resources"
