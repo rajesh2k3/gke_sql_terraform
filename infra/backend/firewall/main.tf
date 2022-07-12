@@ -1,4 +1,4 @@
-# VPC firewall configuration
+# VPC Firewall Configuration
 # Create a firewall rule that allows internal communication across all protocols:
 resource "google_compute_firewall" "firewalli-int" {
   name    = "${terraform.workspace}-firewall-int"
