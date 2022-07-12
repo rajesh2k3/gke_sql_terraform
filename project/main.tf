@@ -1,6 +1,16 @@
-provider "google" {
-  version = "~> 4.24.0"
-  region  = "${var.region}"
+terraform {
+  required_version = ">= 1.2.4"
+
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "4.24.0"
+    }
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = ">= 2.11.0"
+    }
+  }
 }
 
 provider "random" {}
@@ -17,26 +27,10 @@ resource "google_project" "project" {
   org_id          = "${var.org_id}"
 }
 
-resource "google_project_services" "project" {
+resource "google_project_service" "project" {
   project = "${google_project.project.project_id}"
-
-  services = [
-    "bigquery-json.googleapis.com",
-    "compute.googleapis.com",
-    "container.googleapis.com",
-    "containerregistry.googleapis.com",
-    "deploymentmanager.googleapis.com",
-    "dns.googleapis.com",
-    "logging.googleapis.com",
-    "monitoring.googleapis.com",
-    "oslogin.googleapis.com",
-    "pubsub.googleapis.com",
-    "replicapool.googleapis.com",
-    "replicapoolupdater.googleapis.com",
-    "resourceviews.googleapis.com",
-    "servicemanagement.googleapis.com",
-    "sql-component.googleapis.com",
-    "sqladmin.googleapis.com",
-    "storage-api.googleapis.com",
-  ]
+  count   = length(var.project_service)
+  service = element(var.project_service, count.index)
+  disable_on_destroy         = false
+  disable_dependent_services = false
 }
