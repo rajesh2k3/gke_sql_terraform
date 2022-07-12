@@ -1,15 +1,15 @@
-# remote state output
+# Remote state output
 output "data_out" {
   value = "${data.terraform_remote_state.project_id.project_id}"
 }
 
-# network VPC output
+# Network VPC output
 output "vpc_name" {
   value       = "${module.vpc.vpc_name}"
   description = "The unique name of the network"
 }
 
-# subnet cidr ip range
+# Subnet cidr ip range
 output "ip_cidr_range" {
   value       = "${module.subnet.ip_cidr_range}"
   description = "Export created CICDR range"
