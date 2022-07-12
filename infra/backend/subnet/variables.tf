@@ -1,4 +1,4 @@
-# Subnet variables
+# Subnet Variables
 
 variable "region" {
   description = "Region of resources"
