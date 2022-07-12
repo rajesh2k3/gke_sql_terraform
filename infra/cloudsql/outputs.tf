@@ -1,4 +1,4 @@
-# cloud SQL postgresql outputs
+# Cloud SQL postgresql outputs
 
 output "master_instance_sql_ipv4" {
   value       = "${google_sql_database_instance.master.ip_address.0.ip_address}"
