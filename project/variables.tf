@@ -5,12 +5,6 @@ variable "region" {
   description = "Region of resources"
 }
 
-//variable "zone" {
-//  description = "Zone of resources"
-//  default     = "us-central1-b"
-//}
-
-
 variable "project_name" {
   #  default     = "test"
 
@@ -18,8 +12,7 @@ variable "project_name" {
     dev  = "dev"
     prod = "prod"
   }
-
-  description = "The NAME of the Google Cloud project"
+  description = "The Name of the Google Cloud project"
 }
 
 variable "billing_account" {
@@ -28,4 +21,28 @@ variable "billing_account" {
 
 variable "org_id" {
   description = "Organisation account NR."
+}
+
+variable "project_service" {
+  type = list
+  description = "The GCP APIs that should be enabled in this project."
+  default = [
+    "bigquery.googleapis.com",
+    "compute.googleapis.com",
+    "container.googleapis.com",
+    "containerregistry.googleapis.com",
+    "deploymentmanager.googleapis.com",
+    "dns.googleapis.com",
+    "logging.googleapis.com",
+    "monitoring.googleapis.com",
+    "oslogin.googleapis.com",
+    "pubsub.googleapis.com",
+    "replicapool.googleapis.com",
+    "replicapoolupdater.googleapis.com",
+    "resourceviews.googleapis.com",
+    "servicemanagement.googleapis.com",
+    "sql-component.googleapis.com",
+    "sqladmin.googleapis.com",
+    "storage-api.googleapis.com",
+  ]
 }
