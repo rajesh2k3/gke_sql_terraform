@@ -1,4 +1,4 @@
-# Create Subnet
+# Create the Subnet
 
 resource "google_compute_subnetwork" "subnet" {
   name          = "${terraform.workspace}-subnet"
